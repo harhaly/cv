@@ -11,6 +11,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,8 +20,8 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           root_file: |
-            src/cv_en.tex
-            src/cv_ru.tex
+            cv_en.tex
+            cv_ru.tex
           latexmk_use_xelatex: true
           working_directory: src
 
@@ -35,6 +36,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/en/cv.pdf docs/ru/cv.pdf
+
           if git diff --cached --quiet; then
             echo "No PDF changes to commit"
           else
