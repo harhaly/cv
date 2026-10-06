@@ -6,11 +6,31 @@ person:
   title_en: Manual / Automation QA Engineer
   title_ru: QA-инженер (ручное и автоматизированное тестирование)
   email: harhaly3333@gmail.com
-  phone: "+79515531461"
+  phone: '+79515531461'
   github: https://github.com/harhaly
   linkedin: https://www.linkedin.com/in/nikolai-avtsinov
   telegram: https://t.me/+79515531461
-
+  contacts:
+    github:
+      label_en: GitHub
+      label_ru: GitHub
+      url: https://github.com/harhaly
+    linkedin:
+      label_en: LinkedIn
+      label_ru: LinkedIn
+      url: https://www.linkedin.com/in/nikolai-avtsinov
+    email:
+      label_en: Email
+      label_ru: Email
+      url: mailto:harhaly3333@gmail.com
+    telegram:
+      label_en: Telegram
+      label_ru: Telegram
+      url: https://t.me/+79515531461
+    phone:
+      label_en: Phone
+      label_ru: Телефон
+      url: tel:+79515531461
 languages:
   en:
     code: english
@@ -39,27 +59,39 @@ languages:
       university: VSTU
       russian: Russian
       english: English
-    summary: >-
-      QA Engineer with 5 years of experience in FPGA verification. I build Python-based test environments, automate result analysis, and identify the root causes of discrepancies in complex systems. I enjoy working with data: sorting and analyzing test results, preparing reports, and visualizing information with charts. Experienced in automating REST API and UI testing.
-    hire: >-
-      I consider software testing my long-term career and continue to develop in this field deliberately. My broad technical background helps me quickly understand the architecture of new projects and identify weaknesses that are not visible at the specification level. I pay close attention to requirements, take responsibility for product quality, independently fill knowledge gaps, and see tasks through to completion.
+    summary: 'QA Engineer with 5 years of experience in FPGA verification. I build Python-based test environments, automate
+      result analysis, and identify the root causes of discrepancies in complex systems. I enjoy working with data: sorting
+      and analyzing test results, preparing reports, and visualizing information with charts. Experienced in automating REST
+      API and UI testing.'
+    hire: I consider software testing my long-term career and continue to develop in this field deliberately. My broad technical
+      background helps me quickly understand the architecture of new projects and identify weaknesses that are not visible
+      at the specification level. I pay close attention to requirements, take responsibility for product quality, independently
+      fill knowledge gaps, and see tasks through to completion.
     experience:
       company: DTC Electronics
       role: QA Engineer
       dates: May 2021 – Present
       location: Russia, Voronezh
       bullets:
-        - Created tests for an undocumented legacy FPGA block whose behavior was unknown to the team and documented its reference behavior. This made it possible to rewrite the block from scratch and verify that the new implementation fully matched the original without regressions.
-        - Analyzed specifications and requirements for FPGA blocks, prepared test plans and test cases, and applied test design techniques such as boundary value analysis, equivalence partitioning, and combinatorial testing.
-        - Performed manual and exploratory testing of new blocks before automating the checks.
-        - Developed a Python-based test environment for verifying Verilog FPGA models, including operating modes, switching logic, core functionality, and individual blocks. Separated test infrastructure from test cases, allowing new tests to be added without modifying the framework.
-        - Automated simulation log analysis with bash scripts, including parsing, filtering, and summarizing run results. Reduced manual analysis effort by ~75%.
-        - Identified and documented more than 2,000 discrepancies between the model and the specification before the synthesis stage. Created bug reports in Jira, investigated defect root causes, and tracked them through resolution.
+      - Created tests for an undocumented legacy FPGA block whose behavior was unknown to the team and documented its reference
+        behavior. This made it possible to rewrite the block from scratch and verify that the new implementation fully matched
+        the original without regressions.
+      - Analyzed specifications and requirements for FPGA blocks, prepared test plans and test cases, and applied test design
+        techniques such as boundary value analysis, equivalence partitioning, and combinatorial testing.
+      - Performed manual and exploratory testing of new blocks before automating the checks.
+      - Developed a Python-based test environment for verifying Verilog FPGA models, including operating modes, switching
+        logic, core functionality, and individual blocks. Separated test infrastructure from test cases, allowing new tests
+        to be added without modifying the framework.
+      - Automated simulation log analysis with bash scripts, including parsing, filtering, and summarizing run results. Reduced
+        manual analysis effort by ~75%.
+      - Identified and documented more than 2,000 discrepancies between the model and the specification before the synthesis
+        stage. Created bug reports in Jira, investigated defect root causes, and tracked them through resolution.
     project:
       name: UI AND REST API TEST AUTOMATION | PYTEST, SELENIUM
       year: 2023
-      description: >-
-        A test suite for the Parabank demo banking application. Covered both the REST API and the web interface. Used pytest as the test framework, Requests for HTTP requests, Pydantic for data model validation, and Selenium WebDriver for UI testing. Set up CI with GitHub Actions and Allure Report for test reporting.
+      description: A test suite for the Parabank demo banking application. Covered both the REST API and the web interface.
+        Used pytest as the test framework, Requests for HTTP requests, Pydantic for data model validation, and Selenium WebDriver
+        for UI testing. Set up CI with GitHub Actions and Allure Report for test reporting.
     skills:
       programming: Python • Bash
       libraries: pytest • Allure • Requests • Selenium • Pydantic
@@ -77,7 +109,6 @@ languages:
       native: native
       written: written B1
       spoken: spoken A2
-
   ru:
     code: russian
     html_lang: ru
@@ -105,27 +136,38 @@ languages:
       university: ВГТУ
       russian: Русский
       english: Английский
-    summary: >-
-      QA-инженер с 5-летним опытом верификации ПЛИС. Строю тестовые окружения на Python, автоматизирую анализ результатов и нахожу причины несоответствий в сложных системах. Люблю работать с данными: сортирую и анализирую результаты прогонов, формирую отчёты и визуализирую их в графиках. Умею автоматизировать тестирование REST API и UI.
-    hire: >-
-      Считаю тестирование своей профессией на долгую дистанцию и сознательно развиваюсь в этом направлении. Широкий технический бэкграунд позволяет быстро разбираться в архитектуре новых проектов и находить слабые места там, где их не видно на уровне спецификации. Внимательно отношусь к требованиям, беру ответственность за качество продукта, сам закрываю пробелы в знаниях и довожу задачи до результата.
+    summary: 'QA-инженер с 5-летним опытом верификации ПЛИС. Строю тестовые окружения на Python, автоматизирую анализ результатов
+      и нахожу причины несоответствий в сложных системах. Люблю работать с данными: сортирую и анализирую результаты прогонов,
+      формирую отчёты и визуализирую их в графиках. Умею автоматизировать тестирование REST API и UI.'
+    hire: Считаю тестирование своей профессией на долгую дистанцию и сознательно развиваюсь в этом направлении. Широкий технический
+      бэкграунд позволяет быстро разбираться в архитектуре новых проектов и находить слабые места там, где их не видно на
+      уровне спецификации. Внимательно отношусь к требованиям, беру ответственность за качество продукта, сам закрываю пробелы
+      в знаниях и довожу задачи до результата.
     experience:
       company: КТЦ Электроника
       role: QA-инженер
       dates: Май 2021 – Настоящее время
       location: Россия, Воронеж
       bullets:
-        - Покрыл тестами недокументированный legacy-блок ПЛИС, поведение которого никто в команде не знал, и зафиксировал его эталонное поведение. Это позволило переписать блок с нуля и верифицировать новую реализацию на полное соответствие оригиналу без регрессий.
-        - Анализировал спецификации и требования к блокам ПЛИС, составлял тест-планы и тест-кейсы, применяя техники тест-дизайна (граничные значения, классы эквивалентности, комбинаторика режимов).
-        - Проводил ручное и исследовательское тестирование новых блоков до автоматизации проверок.
-        - Разработал тестовое окружение на Python для верификации Verilog-моделей ПЛИС: режимы работы, коммутация, основной функционал и отдельные блоки. Отделил инфраструктуру окружения от тестов, благодаря чему новые тесты добавляются без изменений во фреймворке.
-        - Автоматизировал разбор логов симуляции bash-скриптами: парсинг, фильтрация и сводка результатов прогонов. Это сократило ручной анализ на ~75%.
-        - Выявил и задокументировал 2000+ несоответствий модели спецификации до этапа синтеза. Оформлял баг-репорты в Jira, локализовал причины дефектов и сопровождал их до исправления.
+      - Покрыл тестами недокументированный legacy-блок ПЛИС, поведение которого никто в команде не знал, и зафиксировал его
+        эталонное поведение. Это позволило переписать блок с нуля и верифицировать новую реализацию на полное соответствие
+        оригиналу без регрессий.
+      - Анализировал спецификации и требования к блокам ПЛИС, составлял тест-планы и тест-кейсы, применяя техники тест-дизайна
+        (граничные значения, классы эквивалентности, комбинаторика режимов).
+      - Проводил ручное и исследовательское тестирование новых блоков до автоматизации проверок.
+      - Разработал тестовое окружение на Python для верификации Verilog-моделей ПЛИС: режимы работы, коммутация, основной
+          функционал и отдельные блоки. Отделил инфраструктуру окружения от тестов, благодаря чему новые тесты добавляются
+          без изменений во фреймворке.
+      - Автоматизировал разбор логов симуляции bash-скриптами: парсинг, фильтрация и сводка результатов прогонов. Это сократило
+          ручной анализ на ~75%.
+      - Выявил и задокументировал 2000+ несоответствий модели спецификации до этапа синтеза. Оформлял баг-репорты в Jira,
+        локализовал причины дефектов и сопровождал их до исправления.
     project:
-      name: "PARABANK: АВТОТЕСТЫ UI И REST API | PYTEST, SELENIUM"
+      name: 'PARABANK: АВТОТЕСТЫ UI И REST API | PYTEST, SELENIUM'
       year: 2023
-      description: >-
-        Набор тестов для демонстрационного банковского приложения Parabank. Покрыл тестами REST API и веб-сайт. В качестве тестового фреймворка использовал pytest, requests для HTTP-запросов, Pydantic для валидации модели данных, Selenium WebDriver для тестов веб-сайта. Настроил CI через GitHub Actions и Allure Report для генерации отчётов.
+      description: Набор тестов для демонстрационного банковского приложения Parabank. Покрыл тестами REST API и веб-сайт.
+        В качестве тестового фреймворка использовал pytest, requests для HTTP-запросов, Pydantic для валидации модели данных,
+        Selenium WebDriver для тестов веб-сайта. Настроил CI через GitHub Actions и Allure Report для генерации отчётов.
     skills:
       programming: Python • Bash
       libraries: pytest • Allure • Requests • Selenium • Pydantic
