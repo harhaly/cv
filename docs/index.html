@@ -1,61 +1,56 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nikolai Avtsinov — CV</title>
-  <meta name="description" content="Nikolai Avtsinov — Manual / Automation QA Engineer. English CV.">
-  <style>
-    * { box-sizing: border-box; }
-    html, body { margin:0; width:100%; height:100%; overflow:hidden; background:#e9e9e9; }
-    .cv-frame { position:fixed; inset:0; width:100%; height:100%; border:0; display:block; background:#fff; }
-    .language-switcher {
-      position:fixed; z-index:2147483647; top:50%; right:18px; transform:translateY(-50%);
-      display:flex; flex-direction:column; gap:4px; padding:5px;
-      background:rgba(255,255,255,.97); border:1px solid #d7d7d7; border-radius:7px;
-      box-shadow:0 4px 16px rgba(0,0,0,.18); font-family:"Segoe UI",Arial,sans-serif;
-    }
-    .language-switcher button {
-      appearance:none; border:0; min-width:46px; padding:8px 9px; text-align:center;
-      border-radius:4px; background:transparent; color:#555; cursor:pointer;
-      font-size:12px; font-weight:700; line-height:1.2;
-    }
-    .language-switcher button.active { background:#2878D8; color:#fff; }
-    .language-switcher button:hover:not(.active) { background:#f1f1f1; }
-    @media (max-width:700px) {
-      .language-switcher { right:8px; }
-      .language-switcher button { min-width:42px; padding:7px 8px; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nikolai Avtsinov — QA Engineer</title>
+<style>
+:root{--accent:#2878d8;--text:#404040;--muted:#666;--line:#e8edf3;--bg:#f5f7fa}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Lato,Arial,sans-serif;line-height:1.45}a{color:inherit;text-decoration:none}.page{width:min(100% - 32px,1100px);margin:32px auto;background:#fff;padding:42px 48px 50px;box-shadow:0 8px 30px rgba(30,50,80,.08)}header{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:28px}.name{margin:0;font-size:clamp(36px,5vw,52px);line-height:1;color:var(--accent);letter-spacing:-.8px}.name span{font-weight:300}.title{margin:9px 0 18px;font-size:18px}.contacts{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;font-size:14px}.contact{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}.icon{width:23px;height:23px;border:1px solid #777;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#555}.layout{display:grid;grid-template-columns:minmax(0,1fr) 255px;gap:46px}section{margin-bottom:27px}h2{margin:0 0 13px;color:var(--accent);font-size:17px;line-height:1.1;text-transform:uppercase}h3{margin:0;font-size:14px;line-height:1.3}.body{font-size:14px}.job-head{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:9px}.job-company{font-size:15px}.job-meta{color:var(--muted);font-size:12px;white-space:nowrap}ul{margin:0;padding-left:20px}li{margin:0 0 7px;font-size:13.5px}.project-title{font-size:14px;font-weight:700;margin-bottom:3px}.project-year{color:var(--muted);font-size:12px;margin-bottom:7px}.skill-group{margin-bottom:18px}.skill-group h3{text-transform:uppercase;font-size:12px;margin-bottom:4px}.skill-group p{margin:0;color:var(--muted);font-size:13px}.education-item{margin-bottom:18px}.education-item strong{display:block;font-size:14px}.education-item .degree{font-size:12px;line-height:1.35;margin:3px 0}.education-item .date,.language span{color:var(--muted);font-size:12px}.language{margin-bottom:12px}.language strong{display:block;font-size:12px;text-transform:uppercase}.pdf-link{position:fixed;right:18px;bottom:18px;background:var(--accent);color:#fff;padding:10px 14px;border-radius:6px;font-size:13px;box-shadow:0 4px 14px rgba(40,120,216,.25)}.language-switcher a:hover{color:inherit}.language-switcher a.active:hover{color:#fff}@media(max-width:800px){.page{width:min(100% - 18px,700px);margin:9px auto;padding:28px 24px 80px}.layout{grid-template-columns:1fr;gap:0}.job-head{display:block}.job-meta{display:block;margin-top:3px;white-space:normal}.contacts{gap:9px 18px}}@media print{body{background:#fff}.page{width:100%;margin:0;padding:20px 28px;box-shadow:none}.pdf-link{display:none}}
+
+.language-switcher{position:fixed;top:18px;right:18px;display:flex;gap:4px;padding:4px;background:#fff;border:1px solid var(--line);border-radius:7px;box-shadow:0 4px 14px rgba(30,50,80,.08);z-index:10}.language-switcher a{padding:5px 9px;border-radius:4px;font-size:12px;font-weight:700}.language-switcher a.active{background:var(--accent);color:#fff}
+</style>
 </head>
 <body>
-  <iframe id="cv" class="cv-frame" src="en/cv.pdf#view=FitH" title="Nikolai Avtsinov English CV"></iframe>
-
-  <nav class="language-switcher" aria-label="Language selection">
-    <button id="en" class="active" type="button" onclick="setLanguage('en')">EN</button>
-    <button id="ru" type="button" onclick="setLanguage('ru')">RU</button>
-  </nav>
-
-  <script>
-    const cv = document.getElementById('cv');
-    const buttons = { en: document.getElementById('en'), ru: document.getElementById('ru') };
-
-    function setLanguage(lang, updateUrl = true) {
-      const isRu = lang === 'ru';
-      cv.src = (isRu ? 'ru/cv.pdf' : 'en/cv.pdf') + '#view=FitH';
-      cv.title = isRu ? 'Николай Авцинов — русское резюме' : 'Nikolai Avtsinov English CV';
-      document.documentElement.lang = isRu ? 'ru' : 'en';
-      buttons.en.classList.toggle('active', !isRu);
-      buttons.ru.classList.toggle('active', isRu);
-      buttons.en.setAttribute('aria-pressed', String(!isRu));
-      buttons.ru.setAttribute('aria-pressed', String(isRu));
-      document.title = isRu ? 'Николай Авцинов — Резюме' : 'Nikolai Avtsinov — CV';
-      if (updateUrl) history.replaceState(null, '', isRu ? '#ru' : '#en');
-    }
-
-    // English is always the default. A #ru link opens the same page in Russian.
-    if (location.hash.toLowerCase() === '#ru') setLanguage('ru', false);
-    else setLanguage('en', false);
-  </script>
+<nav class="language-switcher" aria-label="Language"><a class="active" href="./">EN</a><a href="ru/">RU</a></nav>
+<main class="page">
+<header>
+<h1 class="name">Nikolai <span>Avtsinov</span></h1>
+<div class="title">Manual/Automation QA Engineer</div>
+<nav class="contacts">
+<a class="contact" href="https://github.com/harhaly" target="_blank"><span class="icon">GH</span>Avtsinov</a>
+<a class="contact" href="https://www.linkedin.com/in/nikolai-avtsinov" target="_blank"><span class="icon">in</span>Nikolai Avtsinov</a>
+<a class="contact" href="mailto:harhaly3333@gmail.com"><span class="icon">✉</span>harhaly3333@gmail.com</a>
+<a class="contact" href="https://t.me/+79515531461" target="_blank"><span class="icon">TG</span>Telegram</a>
+<a class="contact" href="tel:+79515531461"><span class="icon">☎</span>+79515531461</a>
+</nav>
+</header>
+<div class="layout">
+<div>
+<section><h2>Summary</h2><div class="body">QA Engineer with 5 years of experience in FPGA verification. I build Python-based test environments, automate result analysis, and identify the root causes of discrepancies in complex systems. I enjoy working with data: sorting and analyzing test results, preparing reports, and visualizing information with charts. Experienced in automating REST API and UI testing.</div></section>
+<section><h2>Why You Should Hire Me</h2><div class="body">I consider software testing my long-term career and continue to develop in this field deliberately. My broad technical background helps me quickly understand the architecture of new projects and identify weaknesses that are not visible at the specification level. I pay close attention to requirements, take responsibility for product quality, independently fill knowledge gaps, and see tasks through to completion.</div></section>
+<section><h2>Experience</h2><div class="job-head"><h3 class="job-company">DTC ELECTRONICS | QA ENGINEER</h3><div class="job-meta">May 2021 – Present | Russia, Voronezh</div></div><ul>
+<li>Created tests for an undocumented legacy FPGA block whose behavior was unknown to the team and documented its reference behavior. This made it possible to rewrite the block from scratch and verify that the new implementation fully matched the original without regressions.</li>
+<li>Analyzed specifications and requirements for FPGA blocks, prepared test plans and test cases, and applied test design techniques such as boundary value analysis, equivalence partitioning, and combinatorial testing.</li>
+<li>Performed manual and exploratory testing of new blocks before automating the checks.</li>
+<li>Developed a Python-based test environment for verifying Verilog FPGA models, including operating modes, switching logic, core functionality, and individual blocks. Separated test infrastructure from test cases, allowing new tests to be added without modifying the framework.</li>
+<li>Automated simulation log analysis with bash scripts, including parsing, filtering, and summarizing run results. Reduced manual analysis effort by 75%.</li>
+<li>Identified and documented more than 2,000 discrepancies between the model and the specification before the synthesis stage. Created bug reports in Jira, investigated defect root causes, and tracked them through resolution.</li>
+</ul></section>
+<section><h2>Projects</h2><div class="project-title">PARABANK: UI AND REST API TEST AUTOMATION | PYTEST, SELENIUM</div><div class="project-year">2023</div><div class="body">A test suite for the Parabank demo banking application. Covered both the REST API and the web interface. Used pytest as the test framework, Requests for HTTP requests, Pydantic for data model validation, and Selenium WebDriver for UI testing. Set up CI with GitHub Actions and Allure Report for test reporting.</div></section>
+</div>
+<aside>
+<section><h2>Skills</h2>
+<div class="skill-group"><h3>Programming</h3><p>Python • Bash</p></div>
+<div class="skill-group"><h3>Libraries/Frameworks</h3><p>pytest • Allure • Requests • Selenium • Pydantic</p></div>
+<div class="skill-group"><h3>Documentation</h3><p>LaTeX • Markdown • Notion • Confluence</p></div>
+<div class="skill-group"><h3>Tools/Platforms</h3><p>Subversion • Git • Postman • GitHub Actions • Docker • Jira • Codex • Cursor • Claude Code</p></div>
+<div class="skill-group"><h3>FPGA</h3><p>Verilog • SKILL (Cadence) • NC-Verilog</p></div>
+</section>
+<section><h2>Education</h2><div class="education-item"><strong>VSTU</strong><div class="degree">BACHELOR'S DEGREE IN ELECTRONICS AND NANOELECTRONICS</div><div class="date">2015 – 2019 | Voronezh, Russia</div></div><div class="education-item"><strong>VSTU</strong><div class="degree">MASTER'S DEGREE IN ELECTRONICS AND NANOELECTRONICS</div><div class="date">2019 – 2021 | Voronezh, Russia</div></div></section>
+<section><h2>Languages</h2><div class="language"><strong>Russian</strong><span>Native</span></div><div class="language"><strong>English</strong><span>Written B1<br>Spoken A2</span></div></section>
+</aside>
+</div>
+</main>
+<a class="pdf-link" href="en/cv.pdf" target="_blank">Download PDF</a>
 </body>
 </html>
