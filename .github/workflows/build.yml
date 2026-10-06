@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -19,39 +19,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build English CV
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install generator dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate LaTeX and HTML from one source
+        run: python scripts/generate_cv.py
+
+      - name: Build English PDF
         uses: xu-cheng/latex-action@v4
         with:
           root_file: cv_en.tex
           latexmk_use_xelatex: true
           working_directory: src
 
-      - name: Build Russian CV
+      - name: Build Russian PDF
         uses: xu-cheng/latex-action@v4
         with:
           root_file: cv_ru.tex
           latexmk_use_xelatex: true
           working_directory: src
 
-      - name: Publish PDFs to docs
+      - name: Publish PDFs
         run: |
           mkdir -p docs/en docs/ru
           cp src/cv_en.pdf docs/en/cv.pdf
           cp src/cv_ru.pdf docs/ru/cv.pdf
-
-      - name: Commit generated PDFs
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add docs/en/cv.pdf docs/ru/cv.pdf
-
-          if git diff --cached --quiet; then
-            echo "No PDF changes to commit"
-          else
-            git commit -m "Update CV PDFs"
-            git push
-          fi
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

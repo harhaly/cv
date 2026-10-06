@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="{{ lang.html_lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ lang.summary|html }}">
+  <title>{{ lang.page_title|html }}</title>
+  <link rel="stylesheet" href="{{ css_path }}">
+</head>
+<body>
+  <nav class="language-switcher" aria-label="Language">
+    <a class="{% if lang.code == 'english' %}active{% endif %}" href="/">EN</a>
+    <a class="{% if lang.code == 'russian' %}active{% endif %}" href="/ru/">RU</a>
+  </nav>
+
+  <a class="pdf-link" href="{{ lang.pdf_url }}" target="_blank" rel="noopener">{{ lang.pdf_label }}</a>
+
+  <main class="page">
+    <header class="hero">
+      <h1><span>{{ person.first_name_ru if lang.code == 'russian' else person.first_name }}</span> <em>{{ person.last_name_ru if lang.code == 'russian' else person.last_name }}</em></h1>
+      <div class="title">{{ person.title_ru if lang.code == 'russian' else person.title_en }}</div>
+      <div class="contacts">
+        <a href="{{ person.github }}" target="_blank" rel="noopener"><span class="icon">GH</span>{{ person.last_name_ru if lang.code == 'russian' else person.last_name }}</a>
+        <a href="{{ person.linkedin }}" target="_blank" rel="noopener"><span class="icon">in</span>{{ person.first_name_ru if lang.code == 'russian' else person.first_name }} {{ person.last_name_ru if lang.code == 'russian' else person.last_name }}</a>
+        <a href="mailto:{{ person.email }}"><span class="icon">✉</span>{{ person.email }}</a>
+        <a href="{{ person.telegram }}" target="_blank" rel="noopener"><span class="icon">TG</span>Telegram</a>
+        <a href="tel:{{ person.phone }}"><span class="icon">☎</span>{{ person.phone }}</a>
+      </div>
+    </header>
+
+    <div class="columns">
+      <section class="main-column">
+        <section>
+          <h2>{{ lang.sections.summary }}</h2>
+          <p>{{ lang.summary }}</p>
+        </section>
+        <section>
+          <h2>{{ lang.sections.hire }}</h2>
+          <p>{{ lang.hire }}</p>
+        </section>
+        <section>
+          <h2>{{ lang.sections.experience }}</h2>
+          <div class="job">
+            <div class="job-head"><strong>{{ lang.experience.company }}</strong><span>{{ lang.experience.role }}</span></div>
+            <div class="job-meta"><strong>{{ lang.experience.dates }}</strong><span>{{ lang.experience.location }}</span></div>
+            <ul>{% for item in lang.experience.bullets %}<li>{{ item }}</li>{% endfor %}</ul>
+          </div>
+        </section>
+        <section>
+          <h2>{{ lang.sections.projects }}</h2>
+          <div class="project-head"><strong>Parabank: {{ lang.project.name }}</strong><span>{{ lang.project.year }}</span></div>
+          <p>{{ lang.project.description }}</p>
+        </section>
+      </section>
+
+      <aside class="side-column">
+        <section>
+          <h2>{{ lang.sections.skills }}</h2>
+          <h3>{{ lang.sidebar.programming }}</h3><p>{{ lang.skills.programming }}</p>
+          <h3>{{ lang.sidebar.libraries }}</h3><p>{{ lang.skills.libraries }}</p>
+          <h3>{{ lang.sidebar.documentation }}</h3><p>{{ lang.skills.documentation }}</p>
+          <h3>{{ lang.sidebar.tools }}</h3><p>{{ lang.skills.tools }}</p>
+          <h3>{{ lang.sidebar.fpga }}</h3><p>{{ lang.skills.fpga }}</p>
+        </section>
+        <section>
+          <h2>{{ lang.sections.education }}</h2>
+          <h3>{{ lang.sidebar.university }}</h3>
+          <p>{{ lang.education.bachelor }}</p>
+          <div class="date">{{ lang.education.bachelor_dates }} | {{ lang.education.place }}</div>
+          <h3>{{ lang.sidebar.university }}</h3>
+          <p>{{ lang.education.master }}</p>
+          <div class="date">{{ lang.education.master_dates }} | {{ lang.education.place }}</div>
+        </section>
+        <section>
+          <h2>{{ lang.sections.languages }}</h2>
+          <h3>{{ lang.sidebar.russian }}</h3><p>{{ lang.language_levels.native }}</p>
+          <h3>{{ lang.sidebar.english }}</h3><p>{{ lang.language_levels.written }}<br>{{ lang.language_levels.spoken }}</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

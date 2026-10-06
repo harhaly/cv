@@ -1,47 +1,73 @@
-# CV — Nikolai Avtsinov
+# CV — single source
 
-Bilingual CV (English / Russian) generated with LaTeX and published with GitHub Pages.
+The CV is maintained from **one content file**:
 
-## Project structure
+```text
+data/cv.yaml
+```
 
-- `src/cv_en.tex` — English CV content
-- `src/cv_ru.tex` — Russian CV content
-- `src/common.tex` — shared LaTeX layout and formatting
-- `docs/index.html` — GitHub Pages landing page
-- `.github/workflows/build.yml` — automatic PDF build and deployment
+The generator uses that source to create both English and Russian:
+
+- LaTeX source → PDF
+- HTML resume page
+
+The PDF layout/style remains in `src/common.tex`.
+
+## Structure
+
+```text
+cv-github-pages-single-source/
+├── .github/workflows/build.yml
+├── data/cv.yaml                 # single source of CV content
+├── scripts/generate_cv.py       # generator
+├── templates/
+│   ├── cv.tex.j2                # PDF template
+│   ├── cv.html.j2               # website template
+│   └── cv.css                   # website styles
+├── src/
+│   ├── common.tex               # PDF layout/style
+│   ├── cv_en.tex                # generated source preview
+│   └── cv_ru.tex                # generated source preview
+├── docs/                        # generated Pages output / local preview
+│   ├── index.html
+│   ├── cv.css
+│   ├── en/cv.pdf
+│   └── ru/
+│       ├── index.html
+│       └── cv.pdf
+├── requirements.txt
+└── .gitignore
+```
+
+`docs/` is included in this ZIP so the project is immediately usable after extraction. It is generated output and remains ignored by Git; GitHub Actions recreates it on every build.
 
 ## Local build
 
-Requirements:
-
-- XeLaTeX
-- latexmk
-
-Build English:
-
 ```bash
+python -m pip install -r requirements.txt
+python scripts/generate_cv.py
 cd src
-latexmk -xelatex -interaction=nonstopmode cv_en.tex
+latexmk -xelatex cv_en.tex
+latexmk -xelatex cv_ru.tex
+cp cv_en.pdf ../docs/en/cv.pdf
+cp cv_ru.pdf ../docs/ru/cv.pdf
 ```
 
-Build Russian:
+## GitHub Actions
 
-```bash
-cd src
-latexmk -xelatex -interaction=nonstopmode cv_ru.tex
-```
+Every push to `main`:
 
-## GitHub Pages
+1. reads `data/cv.yaml`;
+2. generates English and Russian LaTeX + HTML;
+3. builds both PDFs with XeLaTeX;
+4. puts the PDFs into `docs/en/` and `docs/ru/`;
+5. deploys `docs/` to GitHub Pages.
 
-1. Create a GitHub repository, for example `cv`.
-2. Push this project to the `main` branch.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **GitHub Actions**.
-5. Push a change or run **Actions → Build CV → Run workflow**.
-6. GitHub will publish the generated site.
+Generated files are intentionally **not committed**. This avoids the generated-PDF commit/push loop.
 
-The workflow compiles both PDFs with XeLaTeX and deploys the `docs/` directory as the Pages site.
+For the root user site `harhaly.github.io`:
 
-## Updating the CV
-
-Most text is defined near the top of `src/cv_en.tex` and `src/cv_ru.tex`. The visual layout is shared in `src/common.tex`, so design changes only need to be made once.
+- `/` — English
+- `/ru/` — Russian
+- `/en/cv.pdf` — English PDF
+- `/ru/cv.pdf` — Russian PDF

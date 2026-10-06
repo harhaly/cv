@@ -1,0 +1,57 @@
+\def\cvlanguage{ {{- lang.code -}} }
+\def\cvfirstname{ {{ person.first_name_ru if lang.code == 'russian' else person.first_name }} }
+\def\cvsurname{ {{ person.last_name_ru if lang.code == 'russian' else person.last_name }} }
+\def\cvtitle{ {{ (person.title_ru if lang.code == 'russian' else person.title_en)|latex }} }
+\def\cvemail{ {{ person.email|latex }} }
+\def\cvphone{ {{ person.phone|latex }} }
+\def\cvgithub{ {{ person.github }} }
+\def\cvlinkedin{ {{ person.linkedin }} }
+\def\cvtelegram{ {{ person.telegram }} }
+
+\def\cvsummarytitle{ {{ lang.sections.summary|latex }} }
+\def\cvsummary{ {{ lang.summary|latex }} }
+\def\cvhiretitle{ {{ lang.sections.hire|latex }} }
+\def\cvhire{ {{ lang.hire|latex }} }
+\def\cvexperiencetitle{ {{ lang.sections.experience|latex }} }
+\def\cvexpcompany{ {{ lang.experience.company|latex }} }
+\def\cvexprole{ {{ lang.experience.role|latex }} }
+\def\cvexpdates{ {{ lang.experience.dates|latex }} }
+\def\cvexplocation{ {{ lang.experience.location|latex }} }
+{% for b in lang.experience.bullets %}\def\cvexp{{ ['one','two','three','four','five','six'][loop.index0] }}{ {{ b|latex }} }
+{% endfor %}
+
+\def\cvprojectstitle{ {{ lang.sections.projects|latex }} }
+\def\cvprojectname{ {{ lang.project.name|latex }} }
+\def\cvprojectyear{ {{ lang.project.year|latex }} }
+\def\cvprojectdesc{ {{ lang.project.description|latex }} }
+
+\def\cvskillstitle{ {{ lang.sections.skills|latex }} }
+\def\cvprogramming{ {{ lang.sidebar.programming|latex }} }
+\def\cvprogrammingvalue{ {{ lang.skills.programming|latex }} }
+\def\cvlibraries{ {{ lang.sidebar.libraries|latex }} }
+\def\cvlibrariesvalue{ {{ lang.skills.libraries|latex }} }
+\def\cvdocumentation{ {{ lang.sidebar.documentation|latex }} }
+\def\cvdocumentationvalue{ {{ lang.skills.documentation|latex }} }
+\def\cvtools{ {{ lang.sidebar.tools|latex }} }
+\def\cvtoolsvalue{ {{ lang.skills.tools|latex }} }
+\def\cvfpgatitle{ {{ lang.sidebar.fpga|latex }} }
+\def\cvfpgavalue{ {{ lang.skills.fpga|latex }} }
+
+\def\cveducationtitle{ {{ lang.sections.education|latex }} }
+\def\cveducationuniversity{ {{ lang.education.university|latex }} }
+\def\cvbachelor{ {{ lang.education.bachelor|latex }} }
+\def\cvbachelordates{ {{ lang.education.bachelor_dates|latex }} }
+\def\cvmaster{ {{ lang.education.master|latex }} }
+\def\cvmasterdates{ {{ lang.education.master_dates|latex }} }
+\def\cveducationplace{ {{ lang.education.place|latex }} }
+\def\cveducationdateone{ {{ lang.education.bachelor_dates|latex }} | {{ lang.education.place|latex }} }
+\def\cveducationdatetwo{ {{ lang.education.master_dates|latex }} | {{ lang.education.place|latex }} }
+
+\def\cvlanguagestitle{ {{ lang.sections.languages|latex }} }
+\def\cvrussianlabel{ {{ lang.sidebar.russian|latex }} }
+\def\cvenglishlabel{ {{ lang.sidebar.english|latex }} }
+\def\cvnative{ {{ lang.language_levels.native|latex }} }
+\def\cvwritten{ {{ lang.language_levels.written|latex }} }
+\def\cvspoken{ {{ lang.language_levels.spoken|latex }} }
+
+\input{common.tex}

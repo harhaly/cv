@@ -1,24 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
 # LaTeX build files
-*.aux
-*.log
-*.out
-*.toc
-*.lof
-*.lot
-*.fls
-*.fdb_latexmk
-*.synctex.gz
-*.xdv
-*.bcf
-*.run.xml
-*.bbl
-*.blg
+src/*.aux
+src/*.fdb_latexmk
+src/*.fls
+src/*.log
+src/*.out
+src/*.synctex.gz
+src/*.toc
+src/cv_en.pdf
+src/cv_ru.pdf
 
-# OS / editor files
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# Local generated PDFs (the published PDFs live in docs/)
-src/*.pdf
+# Generated site and rendered LaTeX sources
+docs/
+src/cv_en.tex
+src/cv_ru.tex

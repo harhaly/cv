@@ -100,7 +100,7 @@
 
 \vspace{13pt}
 \sectiontitle{\cvexperiencetitle}
-\ifnum\pdfstrcmp{\cvlanguage}{russian}=0\job{КТЦ Электроника}{QA-инженер}{Май 2021 – Настоящее время}{Россия, Воронеж}\else\job{DTC Electronics}{QA Engineer}{May 2021 – Present}{Russia, Voronezh}\fi
+\job{\cvexpcompany}{\cvexprole}{\cvexpdates}{\cvexplocation}
 {\bodytext{\begin{itemize}[leftmargin=1.05em,label=\textbullet,itemsep=0pt,topsep=0pt,parsep=0pt]
   \item \cvexpone
   \item \cvexptwo
@@ -112,45 +112,45 @@
 
 \vspace{11pt}
 \sectiontitle{\cvprojectstitle}
-\project{Parabank: \cvprojectname}{2023}
+\project{Parabank: \cvprojectname}{\cvprojectyear}
 \bodytext{\cvprojectdesc}
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.245\textwidth}
 \sectiontitle{\cvskillstitle}
 \sideheading{\cvprogramming}
-\sidebody{Python • Bash}
+\sidebody{\cvprogrammingvalue}
 \vspace{7pt}
 \sideheading{\cvlibraries}
-\sidebody{pytest • Allure • Requests • Selenium • Pydantic}
+\sidebody{\cvlibrariesvalue}
 \vspace{7pt}
 \sideheading{\cvdocumentation}
-\sidebody{LaTeX • Markdown • Notion • Confluence}
+\sidebody{\cvdocumentationvalue}
 \vspace{7pt}
 \sideheading{\cvtools}
-\sidebody{Subversion • Git • Postman • GitHub Actions • Docker • Jira • Codex • Cursor • Claude Code}
+\sidebody{\cvtoolsvalue}
 \vspace{7pt}
-\sideheading{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 ПЛИС\else FPGA\fi}
-\sidebody{Verilog • SKILL (Cadence) • NC-Verilog}
+\sideheading{\cvfpgatitle}
+\sidebody{\cvfpgavalue}
 
 \vspace{14pt}
 \sectiontitle{\cveducationtitle}
-\sideheading{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 ВГТУ\else VSTU\fi}
+\sideheading{\cveducationuniversity}
 \sidebody{\cvbachelor}
 \vspace{2pt}
-{\color{text}\fontsize{8.0}{9.4}\selectfont\bfseries \ifnum\pdfstrcmp{\cvlanguage}{russian}=0 2015 – 2019 | Воронеж, Россия\else 2015 – 2019 | Voronezh, Russia\fi}\par
+{\color{text}\fontsize{8.0}{9.4}\selectfont\bfseries \cveducationdateone}\par
 \vspace{7pt}
-\sideheading{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 ВГТУ\else VSTU\fi}
+\sideheading{\cveducationuniversity}
 \sidebody{\cvmaster}
 \vspace{2pt}
-{\color{text}\fontsize{8.0}{9.4}\selectfont\bfseries \ifnum\pdfstrcmp{\cvlanguage}{russian}=0 2019 – 2021 | Воронеж, Россия\else 2019 – 2021 | Voronezh, Russia\fi}\par
+{\color{text}\fontsize{8.0}{9.4}\selectfont\bfseries \cveducationdatetwo}\par
 
 \vspace{14pt}
 \sectiontitle{\cvlanguagestitle}
-\sideheading{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 Русский\else Russian\fi}
+\sideheading{\cvrussianlabel}
 \sidebody{\cvnative}
 \vspace{7pt}
-\sideheading{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 Английский\else English\fi}
+\sideheading{\cvenglishlabel}
 \sidebody{\cvwritten\par \cvspoken}
 \end{minipage}
 
