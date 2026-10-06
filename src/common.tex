@@ -1,0 +1,146 @@
+\documentclass[9pt,a4paper]{article}
+
+\usepackage[a4paper,left=1.12cm,right=1.12cm,top=0.82cm,bottom=0.9cm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{parskip}
+\usepackage{tikz}
+
+\setmainlanguage{\cvlanguage}
+\setotherlanguage{english}
+\setmainfont{Lato}[BoldFont=Lato Bold,ItalicFont=Lato Italic]
+\newfontface\latolight{Lato Light}
+
+\definecolor{accent}{HTML}{2878D8}
+\definecolor{text}{HTML}{404040}
+\definecolor{muted}{HTML}{666666}
+\definecolor{icon}{HTML}{555555}
+
+\hypersetup{colorlinks=true,urlcolor=text,linkcolor=text,pdfborder={0 0 0}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\iconbox}[1]{%
+  \tikz[baseline=-0.55ex]{\node[draw=icon,line width=.45pt,rounded corners=1.5pt,inner sep=2.8pt] {\color{icon}\scriptsize #1};}%
+}
+
+\newcommand{\contactitem}[3]{%
+  \href{#1}{\iconbox{#2}\hspace{0.25em}#3}%
+}
+
+\newcommand{\sectiontitle}[1]{%
+  {\color{accent}\fontsize{13}{15}\selectfont\bfseries\MakeUppercase{#1}}\par
+  \vspace{7pt}
+}
+
+\newcommand{\sideheading}[1]{%
+  {\color{text}\fontsize{10.2}{11.5}\selectfont\bfseries\MakeUppercase{#1}}\par
+  \vspace{3pt}
+}
+
+\newcommand{\job}[4]{%
+  {\fontsize{10}{11.5}\selectfont\bfseries #1}\hspace{0.55em}{\color{muted}\rule[-0.1ex]{0.45pt}{1.45ex}}\hspace{0.55em}{\color{muted}\fontsize{8.6}{10}\selectfont #2}\par
+  {\color{text}\fontsize{8.0}{9.4}\selectfont\bfseries #3}\hfill{\color{muted}\fontsize{8.0}{9.4}\selectfont #4}\par
+  \vspace{5pt}
+}
+
+\newcommand{\project}[2]{%
+  {\fontsize{10.2}{11.5}\selectfont\bfseries #1}\hspace{0.55em}{\color{muted}\rule[-0.1ex]{0.45pt}{1.45ex}}\hspace{0.55em}{\color{muted}\fontsize{8.2}{9.5}\selectfont #2}\par
+  \vspace{3pt}
+}
+
+\newcommand{\bodytext}[1]{\color{text}\fontsize{9.15}{11.1}\selectfont #1\par}
+
+\newcommand{\sidebody}[1]{\color{muted}\fontsize{9.05}{10.9}\selectfont #1\par}
+
+\begin{document}
+
+% ===== HEADER =====
+{\fontsize{34}{34}\selectfont\color{accent}\bfseries\cvfirstname\hspace{0.16em}{\latolight\cvsurname}}\par
+\vspace{4pt}
+{\fontsize{13.5}{15.5}\selectfont\color{text}\cvtitle}\par
+\vspace{10pt}
+
+\noindent\begin{tabularx}{\textwidth}{@{}X X X X@{}}
+\contactitem{\cvgithub}{\faGithub}{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 Авцинов\else Avtsinov\fi} &
+\contactitem{\cvlinkedin}{\faLinkedinIn}{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 Николай Авцинов\else Nikolai Avtsinov\fi} &
+\contactitem{mailto:\cvemail}{\faEnvelope}{\cvemail} &
+\contactitem{tel:\cvphone}{\faPhone}{\cvphone}
+\end{tabularx}
+
+\vspace{14pt}
+
+% ===== TWO COLUMN CONTENT =====
+\noindent\begin{minipage}[t]{0.695\textwidth}
+\sectiontitle{\cvsummarytitle}
+\bodytext{\cvsummary}
+
+\vspace{13pt}
+\sectiontitle{\cvhiretitle}
+\bodytext{\cvhire}
+
+\vspace{13pt}
+\sectiontitle{\cvexperiencetitle}
+\ifnum\pdfstrcmp{\cvlanguage}{russian}=0\job{КТЦ Электроника}{QA-инженер}{Май 2021 -- Настоящее время}{Россия, Воронеж}\else\job{DTC Electronics}{QA Engineer}{May 2021 -- Present}{Russia, Voronezh}\fi
+{\bodytext{\begin{itemize}[leftmargin=1.05em,label=\textbullet,itemsep=0pt,topsep=0pt,parsep=0pt]
+  \item \cvexpone
+  \item \cvexptwo
+  \item \cvexpthree
+  \item \cvexpfour
+  \item \cvexpfive
+  \item \cvexpsix
+\end{itemize}}}
+
+\vspace{11pt}
+\sectiontitle{\cvprojectstitle}
+\project{Parabank: \cvprojectname}{2023}
+\bodytext{\cvprojectdesc}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.245\textwidth}
+\sectiontitle{\cvskillstitle}
+\sideheading{\cvprogramming}
+\sidebody{Python • Bash}
+\vspace{7pt}
+\sideheading{\cvlibraries}
+\sidebody{pytest • Allure • Requests • Selenium • Pydantic}
+\vspace{7pt}
+\sideheading{\cvdocumentation}
+\sidebody{LaTeX • Markdown • Notion • Confluence}
+\vspace{7pt}
+\sideheading{\cvtools}
+\sidebody{Subversion • Git • Postman • GitHub Actions • Docker • Jira • Codex • Cursor • Claude Code}
+\vspace{7pt}
+\sideheading{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 ПЛИС\else FPGA\fi}
+\sidebody{Verilog • SKILL (Cadence) • NC-Verilog}
+
+\vspace{14pt}
+\sectiontitle{\cveducationtitle}
+\sideheading{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 ВГТУ\else VSTU\fi}
+\sidebody{\cvbachelor}
+\vspace{2pt}
+{\color{text}\fontsize{8.0}{9.4}\selectfont\bfseries \ifnum\pdfstrcmp{\cvlanguage}{russian}=0 2015 -- 2019 | Воронеж, Россия\else 2015 -- 2019 | Voronezh, Russia\fi}\par
+\vspace{7pt}
+\sideheading{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 ВГТУ\else VSTU\fi}
+\sidebody{\cvmaster}
+\vspace{2pt}
+{\color{text}\fontsize{8.0}{9.4}\selectfont\bfseries \ifnum\pdfstrcmp{\cvlanguage}{russian}=0 2019 -- 2021 | Воронеж, Россия\else 2019 -- 2021 | Voronezh, Russia\fi}\par
+
+\vspace{14pt}
+\sectiontitle{\cvlanguagestitle}
+\sideheading{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 Русский\else Russian\fi}
+\sidebody{\cvnative}
+\vspace{7pt}
+\sideheading{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 Английский\else English\fi}
+\sidebody{\cvwritten\par \cvspoken}
+\end{minipage}
+
+\end{document}
