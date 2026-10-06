@@ -73,13 +73,19 @@
 \vspace{10pt}
 
 \noindent
-\begin{tabularx}{\textwidth}{@{}*{5}{>{\raggedright\arraybackslash}X}@{}}
-\mbox{\contactitem{\cvgithub}{\faGithub}{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 Авцинов\else Avtsinov\fi}} &
-\mbox{\contactitem{\cvlinkedin}{\faLinkedinIn}{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 Николай Авцинов\else Nikolai Avtsinov\fi}} &
-\mbox{\contactitem{mailto:\cvemail}{\faEnvelope}{\cvemail}} &
-\mbox{\contactitem{\cvtelegram}{\faTelegramPlane}{\cvphone}} &
-\mbox{\contactitem{tel:\cvphone}{\faPhone}{\cvphone}}
-\end{tabularx}
+{\fontsize{8.6}{10}\selectfont
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lllll@{}}
+\contactitem{\cvgithub}{\faGithub}{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 Авцинов\else Avtsinov\fi}
+&
+\contactitem{\cvlinkedin}{\faLinkedinIn}{\ifnum\pdfstrcmp{\cvlanguage}{russian}=0 Николай Авцинов\else Nikolai Avtsinov\fi}
+&
+\contactitem{mailto:\cvemail}{\faEnvelope}{\cvemail}
+&
+\contactitem{\cvtelegram}{\faTelegramPlane}{Telegram}
+&
+\contactitem{tel:\cvphone}{\faPhone}{\cvphone}
+\end{tabular*}
+}
 
 \vspace{14pt}
 
